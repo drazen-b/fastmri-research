@@ -81,6 +81,10 @@ It takes multi coil k-space as input and it applies a series of refinement steps
   </div>
 </div>
 
+## Conclusion
+
+In this project we used already trained models which fastMRI library provides. Reconstruction techniques and models which were tested are zero-fill, compressed sensing, U-Net and E2E VarNet. First, noise was added to a fully sampled image, followed by reconstructions performed on the noisy image. This was done to compare the results with the fully sampled reconstruction and thus easily discern all reconstruction characteristics. The results from U-Net and VarNet models show cleaner images, but a comparison with the original image reveals a lack of details. Then, test images from all five data collection methods were loaded, and reconstructions were performed on them. The results also show higher quality and sharper images with U-Net and VarNet models, but it is not possible to draw a complete conclusion due to the lack of comparison as in the previous example. Determining the clinical validity of the obtained results is not possible without consulting a medical diagnostics expert.
+
 ## Future
 
 Goal is to implement modifies U-Net and VarNet models and adapt them for the tash of reconstructing MRI brain images. The to display, explain and compare the results and determine the accuracy of the developed system.
