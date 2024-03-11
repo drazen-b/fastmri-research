@@ -40,7 +40,36 @@ The U-Net model provided by fastMRI is designed for single-coil image reconstruc
 
 End-to-End Varnet model is designet do learn complete process of reconstruction. End-to-End means we can give it raw data without any preprocessing and it will give out processed result.
 
-It takes multi coil k-space as input and it applies a series of refinement steps which we call cascades. Each cascade applies an enhancement step similar to gradient descent, but the intermedieate product is k-space, not an image.
+It takse multi coil k-space as input and applies a series of refinement steps which we call cascades. At the begginning sensitivity maps are estimated using SME module. In each cascade Data Consistency module (DC) and Refinement module (R) is applied. After cascades, IFT is performed to get image from each k-space, followed by root-sum-squares reduction (RSS) for each pixel. Image is then cropped and output is given.
+
+
+#### SME module
+
+Sensitivity Map Estimation module estimates sensitivity maps which are later used in Refinement module. In traditional VarNet sensitivity maps are computed using the ESPIRiT algorithm, but here they're computed using SME module:
+
+<!-- $$ H = dSS \circ CNN \circ \mathcal{F}^{-1} \circ M_{\text{center}} $$ -->
+
+<div align="center">
+    <img src="./images/sme-module.png">
+</div>
+
+ - M<sub>center</sub> zeroes all lines except ACS lines. ACS are autocalibration lines, central region of k-space corresponding to low frequencies which is used for sensitivity estimation.
+- CNN is convolutional neural network. Same as one used in cascades (U-Net), except with fewer channels and fewer parameters.
+- dSS normalizes sensitivity maps. They need to satisfy equiation below:
+
+<!-- $$ \sum_{i=1}^{N} S_i^* S_i = 1 $$ -->
+
+<div align="center">
+    <img src="./images/normalise-equation.png">
+</div>
+
+#### DC module
+
+Data Consistency computes correction map which brings the intermediate k-space closer to the measured k-space values. Ut performs subtraction between inputs and identifies differences between them. After that, it applies correction map to differences identifies in previous step. Adjusts intermediate k-space so it becomes more consistend with measured k-space values.
+
+#### Refinement module
+
+Refinement module maps multi-coil k-space data into one image. It takes intermediate k-space and esttimated sensitivity maps (ESM) as input. Applies IFT to intermediate k-space, then using ESM it reduces it to single image. It applies U-Net on image and then using ESM expands them to images seen by each coil. After all of those steps it applies FT so output is k-space.
 
 <div align="center">
     <img src="./images/e2e-varnet-architecture.png" width="400">
@@ -87,4 +116,4 @@ In this project we used already trained models which fastMRI library provides. R
 
 ## Future
 
-Goal is to implement modifies U-Net and VarNet models and adapt them for the tash of reconstructing MRI brain images. The to display, explain and compare the results and determine the accuracy of the developed system.
+Goal is to implement modified U-Net and VarNet models and adapt them for the task of reconstructing MRI brain images. The display, explain and compare the results and determine the accuracy of the developed system.
