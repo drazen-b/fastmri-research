@@ -6,12 +6,13 @@
 \usepackage{titlesec}
 \usepackage{graphicx}
 \usepackage{float} 
+\usepackage{subcaption}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \begin{document}
 
 \title{MRI image reconstruction using fastMRI library \\ \vspace{0.5cm} \large Summary}
 \author{Dražen Bertić}
-\date{\today} % Or any specific date
+\date{Osijek, 2023} % Or any specific date
 
 \maketitle
 
@@ -77,7 +78,7 @@ The refinement module maps multi-coil k-space data into one image. It takes inte
 \begin{figure}[H]
 \centering
 \includegraphics[width=400pt]{./images/test-images.png}
-\caption{Test images}
+\caption{Test images a) AXFLAIR, b) AXT1, c) AXT1PRE, d) AXT1POST i d) AXT2}
 \end{figure}
 
 \begin{figure}[H]
@@ -85,13 +86,13 @@ The refinement module maps multi-coil k-space data into one image. It takes inte
 \begin{minipage}{.45\textwidth}
   \centering
   \includegraphics[width=200pt]{./images/zero-fill.png}
-  \caption{Zero-fill}
+  \caption{Zero-fill a) AXFLAIR, b) AXT1, c) AXT1PRE, d) AXT1POST i d) AXT2}
 \end{minipage}%
 \hspace{20pt} % Space between the two images
 \begin{minipage}{.45\textwidth}
   \centering
   \includegraphics[width=200pt]{./images/compressed-sensing-images.png}
-  \caption{Compressed Sensing}
+  \caption{Compressed Sensing a) AXFLAIR, b) AXT1, c) AXT1PRE, d) AXT1POST i d) AXT2}
 \end{minipage}
 
 \vspace{20pt} % Space between the two rows of images
@@ -99,15 +100,17 @@ The refinement module maps multi-coil k-space data into one image. It takes inte
 \begin{minipage}{.45\textwidth}
   \centering
   \includegraphics[width=200pt]{./images/unet-images.png}
-  \caption{U-Net}
+  \caption{U-Net a) AXFLAIR, b) AXT1, c) AXT1PRE, d) AXT1POST i d) AXT2}
 \end{minipage}%
 \hspace{20pt} % Space between the two images
 \begin{minipage}{.45\textwidth}
   \centering
   \includegraphics[width=200pt]{./images/varnet-images.png}
-  \caption{End-to-End VarNet}
+  \caption{End-to-End VarNet a) AXFLAIR, b) AXT1, c) AXT1PRE, d) AXT1POST i d) AXT2}
 \end{minipage}
 \end{figure}
+
+\newpage
 
 \section{Current state-of-art}
 
