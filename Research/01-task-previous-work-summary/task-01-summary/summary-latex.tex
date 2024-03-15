@@ -8,6 +8,8 @@
 \usepackage{float} 
 \usepackage{subcaption}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[numbers]{natbib}
+
 \begin{document}
 
 \title{MRI image reconstruction using fastMRI library \\ \vspace{0.5cm} \large Summary}
@@ -18,7 +20,7 @@
 
 \section{fastMRI}
 
-fastMRI is a collaborative exploratory project by Facebook AI Research with the goal of developing faster ways of MRI image acquisition. It consists of datasets of brain and knee MRI images, and of code repository with tools to work with dataset and model implementation.
+fastMRI is a collaborative exploratory project by Facebook AI Research with the goal of developing faster ways of MRI image acquisition. It consists of datasets of brain and knee MRI images, and of code repository with tools to work with dataset and model implementation. \cite{zbontar2019fastmri}
 
 \subsection{Models in fastMRI library}
 
@@ -32,19 +34,19 @@ Compressed Sensing is based on a mathematical principal which states that images
 
 \subsubsection{U-Net}
 
-The U-Net model provided by fastMRI is designed for single-coil image reconstruction but can be adapted to multi-coil images using the zero-fill method for each coil. The model consists of two main paths: a encoder path and decoder path. Encoder paths goal is context and content capture using 3x3 convolutions, instance normalization, ReLU activation and max-pooling down-sampling. Decoder path is used for spatial localization and block up-scaleing. Both paths are connected with skip connections which enchance detail and precision in the output using high-resolution features.
+The U-Net model provided by fastMRI is designed for single-coil image reconstruction but can be adapted to multi-coil images using the zero-fill method for each coil. The model consists of two main paths: a encoder path and decoder path. Encoder paths goal is context and content capture using 3x3 convolutions, instance normalization, ReLU activation and max-pooling down-sampling. Decoder path is used for spatial localization and block up-scaleing. Both paths are connected with skip connections which enchance detail and precision in the output using high-resolution features. \cite{ronneberger2015unet} \cite{zbontar2019fastmri}
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{images/unet-architecture.png}
-\caption{U-Net Architecture}
+\caption{U-Net Architecture \cite{ronneberger2015unet}}
 \end{figure}
 
 \subsubsection{End-to-End VarNet}
 
-End-to-End Varnet model is designed to learn complete process of reconstruction. End-to-End means we can give it raw data without any preprocessing and it will give out processed result.
+End-to-End Varnet model is designed to learn complete process of reconstruction. End-to-End means we can give it raw data without any preprocessing and it will give out processed result. \cite{sriram2020endtoend}
 
-It takes multi coil k-space as input and applies a series of refinement steps which we call cascades. At the begginning sensitivity maps are estimated using SME module. In each cascade Data Consistency module (DC) and Refinement module (R) is applied. After cascades, IFT is performed to get image from each k-space, followed by root-sum-squares reduction (RSS) for each pixel. Image is then cropped and output is given.
+It takes multi coil k-space as input and applies a series of refinement steps which we call cascades. At the begginning sensitivity maps are estimated using SME module. In each cascade Data Consistency module (DC) and Refinement module (R) is applied. After cascades, IFT is performed to get image from each k-space, followed by root-sum-squares reduction (RSS) for each pixel. Image is then cropped and output is given. \cite{sriram2020endtoend}
 
 \paragraph{SME Module}
 
@@ -61,7 +63,7 @@ $$ H = dSS \circ CNN \circ \mathcal{F}^{-1} \circ M_{\text{center}} $$
 
 \paragraph{DC Module}
 
-Data Consistency computes correction map which brings the intermediate k-space closer to the measured k-space values. Ut performs subtraction between inputs and identifies differences between them. After that, it applies a correction map to differences identified in the previous step. Adjusting intermediate k-space so it becomes more consistent with measured k-space values.
+Data Consistency computes correction map which brings the intermediate k-space closer to the measured k-space values. It performs subtraction between inputs and identifies differences between them. After that, it applies a correction map to differences identified in the previous step. Adjusting intermediate k-space so it becomes more consistent with measured k-space values.
 
 \paragraph{Refinement Module}
 
@@ -70,7 +72,7 @@ The refinement module maps multi-coil k-space data into one image. It takes inte
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{images/e2e-varnet-architecture.png}
-\caption{End-to-End VarNet Architecture}
+\caption{End-to-End VarNet Architecture \cite{sriram2020endtoend}}
 \end{figure}
 
 \subsection{Results}
@@ -114,26 +116,30 @@ The refinement module maps multi-coil k-space data into one image. It takes inte
 
 \section{Current state-of-art}
 
-For a long time E2E VarNet presented best results on fastMRI bechmark, but in March 2023 HUMUS-Net network which outperforms E2E VarNet has been presented. It's an unrolled, Transformer-convolutional hybrid network for accelerated MRI reconstruction. Architecture consists of a sequence of sub-networks (cascades). Each cascade represents an unrolled iteration of an underlying optimization algorithm in k-space with an image-domain denoiser, the HUMUS-Block. The HUMUS-Block acts as an image-space denoiser that receives an intermediate reconstruction from the previous cascade and performs a single step of denoising to produce an improved reconstruction for the next cascade. It extracts high-resolution, shallow features and low-resolution, deep features through a novel multi-scale transformer-based block, and synthesizes high-resolution features from those. Limitation of current architecture is that it required fixed-size inputs.
+For a long time End-to-End VarNet presented best results on fastMRI bechmark, but in March 2023 HUMUS-Net network which outperforms End-to-End VarNet has been presented. It's an unrolled, Transformer-convolutional hybrid network for accelerated MRI reconstruction. Architecture consists of a sequence of sub-networks (cascades). Each cascade represents an unrolled iteration of an underlying optimization algorithm in k-space with an image-domain denoiser, the HUMUS-Block. The HUMUS-Block acts as an image-space denoiser that receives an intermediate reconstruction from the previous cascade and performs a single step of denoising to produce an improved reconstruction for the next cascade. It extracts high-resolution, shallow features and low-resolution, deep features through a novel multi-scale transformer-based block, and synthesizes high-resolution features from those. Limitation of current architecture is that it required fixed-size inputs. \cite{fabian2023humusnet}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=300pt]{./images/humus-comparison.png}
-\caption{Humus results comparison}
+\caption{Humus results comparison \cite{fabian2023humusnet}}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=400pt]{./images/humus-perf.png}
-\caption{Humus performance comparison}
+\caption{Humus performance comparison \cite{fabian2023humusnet}}
 \end{figure}
 
 \section{Conclusion}
 
-FastMRI library provides set of tools, models and dataset needed to work on MRI reconstruction. Techniques it provides are zero-fill, compressed sensing, U-Net and E2E VarNet. For a long time E2E VarNet presented best results, until HUMUS-Net, which brought better results, was presented in March 2023. But still, reconstructions are still now clinicaly valid because of their total lack of details. Even if they were, they would need a approval of medical experts and couldn't be used in real diagnostics.
+FastMRI library provides set of tools, models and dataset needed to work on MRI reconstruction. Techniques it provides are zero-fill, compressed sensing, U-Net and End-to-End VarNet. For a long time End-to-End VarNet presented best results, until HUMUS-Net, which brought better results, was presented in March 2023. But still, reconstructions are still now clinicaly valid because of their total lack of details. Even if they were, they would need a approval of medical experts and couldn't be used in real diagnostics.
 
 \section{Master thesis}
 
 Goal is to implement modified U-Net and VarNet models and adapt them for the task of reconstructing MRI brain images. The display, explain and compare the results and determine the accuracy of the developed system.
+
+\newpage
+\bibliographystyle{plainnat} % Or any other style you prefer
+\bibliography{references}    % Assumes your BibTeX file is 'references.bib'
 
 \end{document}

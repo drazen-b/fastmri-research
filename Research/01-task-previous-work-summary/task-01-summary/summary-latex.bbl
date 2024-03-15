@@ -1,0 +1,39 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Fabian et~al.(2023)Fabian, Tinaz, and
+  Soltanolkotabi]{fabian2023humusnet}
+Zalan Fabian, Berk Tinaz, and Mahdi Soltanolkotabi.
+\newblock Humus-net: Hybrid unrolled multi-scale network architecture for
+  accelerated mri reconstruction, 2023.
+
+\bibitem[Ronneberger et~al.(2015)Ronneberger, Fischer, and
+  Brox]{ronneberger2015unet}
+Olaf Ronneberger, Philipp Fischer, and Thomas Brox.
+\newblock U-net: Convolutional networks for biomedical image segmentation,
+  2015.
+
+\bibitem[Sriram et~al.(2020)Sriram, Zbontar, Murrell, Defazio, Zitnick,
+  Yakubova, Knoll, and Johnson]{sriram2020endtoend}
+Anuroop Sriram, Jure Zbontar, Tullie Murrell, Aaron Defazio, C.~Lawrence
+  Zitnick, Nafissa Yakubova, Florian Knoll, and Patricia Johnson.
+\newblock End-to-end variational networks for accelerated mri reconstruction,
+  2020.
+
+\bibitem[Zbontar et~al.(2019)Zbontar, Knoll, Sriram, Murrell, Huang, Muckley,
+  Defazio, Stern, Johnson, Bruno, Parente, Geras, Katsnelson, Chandarana,
+  Zhang, Drozdzal, Romero, Rabbat, Vincent, Yakubova, Pinkerton, Wang, Owens,
+  Zitnick, Recht, Sodickson, and Lui]{zbontar2019fastmri}
+Jure Zbontar, Florian Knoll, Anuroop Sriram, Tullie Murrell, Zhengnan Huang,
+  Matthew~J. Muckley, Aaron Defazio, Ruben Stern, Patricia Johnson, Mary Bruno,
+  Marc Parente, Krzysztof~J. Geras, Joe Katsnelson, Hersh Chandarana, Zizhao
+  Zhang, Michal Drozdzal, Adriana Romero, Michael Rabbat, Pascal Vincent,
+  Nafissa Yakubova, James Pinkerton, Duo Wang, Erich Owens, C.~Lawrence
+  Zitnick, Michael~P. Recht, Daniel~K. Sodickson, and Yvonne~W. Lui.
+\newblock fastmri: An open dataset and benchmarks for accelerated mri, 2019.
+
+\end{thebibliography}

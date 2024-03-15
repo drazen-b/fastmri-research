@@ -1,0 +1,5 @@
+[0] Config.pm:306> INFO - This is Biber 2.18
+[0] Config.pm:309> INFO - Logfile is 'summary-latex.tex.blg'
+[66] biber:340> INFO - === Fri Mar 15, 2024, 10:27:59
+[83] Utils.pm:410> ERROR - Cannot find 'summary-latex.tex.bcf'!
+[83] Biber.pm:135> INFO - ERRORS: 1

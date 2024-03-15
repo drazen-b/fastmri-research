@@ -1,0 +1,15 @@
+[0] Config.pm:306> INFO - This is Biber 2.18
+[0] Config.pm:309> INFO - Logfile is 'summary-latex.blg'
+[75] biber:340> INFO - === Fri Mar 15, 2024, 10:30:00
+[88] Biber.pm:418> INFO - Reading 'summary-latex.bcf'
+[145] Biber.pm:978> INFO - Found 1 citekeys in bib section 0
+[155] Biber.pm:4401> INFO - Processing section 0
+[163] Biber.pm:4592> INFO - Looking for bibtex file 'references.bib' for section 0
+[164] bibtex.pm:1713> INFO - LaTeX decoding ...
+[166] bibtex.pm:1518> INFO - Found BibTeX data source 'references.bib'
+[197] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[197] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[197] Biber.pm:4221> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[197] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
+[198] bbl.pm:654> INFO - Writing 'summary-latex.bbl' with encoding 'UTF-8'
+[198] bbl.pm:757> INFO - Output to summary-latex.bbl
