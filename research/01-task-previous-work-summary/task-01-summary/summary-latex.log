@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.10.31)  15 MAR 2024 10:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.10.31)  18 MAR 2024 12:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -328,11 +328,11 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images/unet-architecture.png, id=1, 496.85625pt x 325.215pt>
+<images/unet-architecture.png, id=1, 479.54156pt x 241.65282pt>
 File: images/unet-architecture.png Graphic file (type png)
 <use images/unet-architecture.png>
 Package pdftex.def Info: images/unet-architecture.png  used on input line 41.
-(pdftex.def)             Requested size: 248.4275pt x 162.6071pt.
+(pdftex.def)             Requested size: 239.77019pt x 120.82611pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/unet-architecture
@@ -341,48 +341,48 @@ Package pdftex.def Info: images/unet-architecture.png  used on input line 41.
 File: images/e2e-varnet-architecture.png Graphic file (type png)
 <use images/e2e-varnet-architecture.png>
 Package pdftex.def Info: images/e2e-varnet-architecture.png  used on input line
- 74.
+ 75.
 (pdftex.def)             Requested size: 255.57921pt x 291.71413pt.
 <./images/test-images.png, id=13, 459.96844pt x 374.14781pt>
 File: ./images/test-images.png Graphic file (type png)
 <use ./images/test-images.png>
-Package pdftex.def Info: ./images/test-images.png  used on input line 82.
+Package pdftex.def Info: ./images/test-images.png  used on input line 83.
 (pdftex.def)             Requested size: 400.0pt x 325.38606pt.
 
 [2 <./images/e2e-varnet-architecture.png (PNG copy)>]
 <./images/zero-fill.png, id=23, 469.00218pt x 362.85562pt>
 File: ./images/zero-fill.png Graphic file (type png)
 <use ./images/zero-fill.png>
-Package pdftex.def Info: ./images/zero-fill.png  used on input line 90.
+Package pdftex.def Info: ./images/zero-fill.png  used on input line 91.
 (pdftex.def)             Requested size: 200.0pt x 154.73482pt.
 <./images/compressed-sensing-images.png, id=24, 476.53032pt x 362.10281pt>
 File: ./images/compressed-sensing-images.png Graphic file (type png)
 <use ./images/compressed-sensing-images.png>
 Package pdftex.def Info: ./images/compressed-sensing-images.png  used on input 
-line 96.
+line 97.
 (pdftex.def)             Requested size: 200.0pt x 151.97716pt.
 <./images/unet-images.png, id=25, 477.28313pt x 361.35pt>
 File: ./images/unet-images.png Graphic file (type png)
 <use ./images/unet-images.png>
-Package pdftex.def Info: ./images/unet-images.png  used on input line 104.
+Package pdftex.def Info: ./images/unet-images.png  used on input line 105.
 (pdftex.def)             Requested size: 200.0pt x 151.4186pt.
 <./images/varnet-images.png, id=26, 477.28313pt x 361.35pt>
 File: ./images/varnet-images.png Graphic file (type png)
 <use ./images/varnet-images.png>
-Package pdftex.def Info: ./images/varnet-images.png  used on input line 110.
+Package pdftex.def Info: ./images/varnet-images.png  used on input line 111.
 (pdftex.def)             Requested size: 200.0pt x 151.4186pt.
  [3 <./images/test-images.png>] [4 <./images/zero-fill.png> <./images/compresse
 d-sensing-images.png> <./images/unet-images.png> <./images/varnet-images.png>]
 <./images/humus-comparison.png, id=38, 433.62pt x 610.53094pt>
 File: ./images/humus-comparison.png Graphic file (type png)
 <use ./images/humus-comparison.png>
-Package pdftex.def Info: ./images/humus-comparison.png  used on input line 123.
+Package pdftex.def Info: ./images/humus-comparison.png  used on input line 124.
 
 (pdftex.def)             Requested size: 300.0pt x 422.41266pt.
 <./images/humus-perf.png, id=39, 601.4972pt x 233.37187pt>
 File: ./images/humus-perf.png Graphic file (type png)
 <use ./images/humus-perf.png>
-Package pdftex.def Info: ./images/humus-perf.png  used on input line 129.
+Package pdftex.def Info: ./images/humus-perf.png  used on input line 130.
 (pdftex.def)             Requested size: 400.0pt x 155.19746pt.
  [5 <./images/humus-comparison.png (PNG copy)>] [6 <./images/humus-perf.png (PN
 G copy)>]
@@ -406,7 +406,7 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on summary-latex.pdf (7 pages, 1492707 bytes).
+Output written on summary-latex.pdf (7 pages, 1464260 bytes).
 PDF statistics:
  94 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream

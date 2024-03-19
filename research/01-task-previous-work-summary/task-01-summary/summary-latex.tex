@@ -39,9 +39,10 @@ The U-Net model provided by fastMRI is designed for single-coil image reconstruc
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{images/unet-architecture.png}
-\caption{U-Net Architecture \cite{ronneberger2015unet}}
+\caption{U-Net Architecture \cite{zbontar2019fastmri}}
 \end{figure}
 
+\newpage
 \subsubsection{End-to-End VarNet}
 
 End-to-End Varnet model is designed to learn complete process of reconstruction. End-to-End means we can give it raw data without any preprocessing and it will give out processed result. \cite{sriram2020endtoend}
@@ -116,7 +117,7 @@ The refinement module maps multi-coil k-space data into one image. It takes inte
 
 \section{Current state-of-art}
 
-For a long time End-to-End VarNet presented best results on fastMRI bechmark, but in March 2023 HUMUS-Net network which outperforms End-to-End VarNet has been presented. It's an unrolled, Transformer-convolutional hybrid network for accelerated MRI reconstruction. Architecture consists of a sequence of sub-networks (cascades). Each cascade represents an unrolled iteration of an underlying optimization algorithm in k-space with an image-domain denoiser, the HUMUS-Block. The HUMUS-Block acts as an image-space denoiser that receives an intermediate reconstruction from the previous cascade and performs a single step of denoising to produce an improved reconstruction for the next cascade. It extracts high-resolution, shallow features and low-resolution, deep features through a novel multi-scale transformer-based block, and synthesizes high-resolution features from those. Limitation of current architecture is that it required fixed-size inputs. \cite{fabian2023humusnet}
+For a long time End-to-End VarNet presented best results on fastMRI bechmark, but in March 2023 HUMUS-Net network which outperforms End-to-End VarNet has been presented. It's an unrolled, transformer-convolutional hybrid network for accelerated MRI reconstruction. Architecture consists of a sequence of sub-networks (cascades). Each cascade represents an unrolled iteration of an underlying optimization algorithm in k-space with an image-domain denoiser, the HUMUS-Block. The HUMUS-Block acts as an image-space denoiser that receives an intermediate reconstruction from the previous cascade and performs a single step of denoising to produce an improved reconstruction for the next cascade. It extracts high-resolution, shallow features and low-resolution, deep features through a novel multi-scale transformer-based block, and synthesizes high-resolution features from those. Limitation of current architecture is that it required fixed-size inputs. \cite{fabian2023humusnet}
 
 \begin{figure}[H]
 \centering
