@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.10.31)  18 MAR 2024 12:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.4.5)  8 APR 2024 11:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **summary-latex.tex
 (./summary-latex.tex
-LaTeX2e <2022-06-01> patch level 5
-L3 programming layer <2022-12-17>
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@section=\count186
@@ -19,8 +19,8 @@ File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 \c@subparagraph=\count190
 \c@figure=\count191
 \c@table=\count192
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
 \bibindent=\dimen140
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
@@ -30,7 +30,7 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
-\@mathmargin=\skip49
+\@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -90,8 +90,8 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \totwidth@=\dimen148
 \lineht@=\dimen149
 \@envbody=\toks21
-\multlinegap=\skip50
-\multlinetaggap=\skip51
+\multlinegap=\skip51
+\multlinetaggap=\skip52
 \mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
@@ -110,8 +110,8 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box53
-\beforetitleunit=\skip52
-\aftertitleunit=\skip53
+\beforetitleunit=\skip53
+\aftertitleunit=\skip54
 \ttl@plus=\dimen150
 \ttl@minus=\dimen151
 \ttl@toksa=\toks23
@@ -152,13 +152,13 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@floatcapt=\box55
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
-Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
+Package: subcaption 2023/02/19 v1.6 Sub-captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2022/03/01 v3.6b Customizing captions (AR)
+Package: caption 2023/03/12 v3.6j Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
 \caption@tempdima=\dimen157
 \captionmargin=\dimen158
 \caption@leftmargin=\dimen159
@@ -173,7 +173,9 @@ Package caption Info: Standard document class detected.
 \c@continuedfloat=\count273
 Package caption Info: float package is loaded.
 )
+Package caption Info: New subtype `subfigure' on input line 239.
 \c@subfigure=\count274
+Package caption Info: New subtype `subtable' on input line 239.
 \c@subtable=\count275
 )
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
@@ -200,13 +202,13 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 )
 (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip54
-\bibsep=\skip55
+\bibhang=\skip55
+\bibsep=\skip56
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count279
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count280
 \l__pdf_internal_box=\box56
 )
@@ -349,7 +351,8 @@ File: ./images/test-images.png Graphic file (type png)
 Package pdftex.def Info: ./images/test-images.png  used on input line 83.
 (pdftex.def)             Requested size: 400.0pt x 325.38606pt.
 
-[2 <./images/e2e-varnet-architecture.png (PNG copy)>]
+[2{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./
+images/e2e-varnet-architecture.png (PNG copy)>]
 <./images/zero-fill.png, id=23, 469.00218pt x 362.85562pt>
 File: ./images/zero-fill.png Graphic file (type png)
 <use ./images/zero-fill.png>
@@ -371,8 +374,9 @@ File: ./images/varnet-images.png Graphic file (type png)
 <use ./images/varnet-images.png>
 Package pdftex.def Info: ./images/varnet-images.png  used on input line 111.
 (pdftex.def)             Requested size: 200.0pt x 151.4186pt.
- [3 <./images/test-images.png>] [4 <./images/zero-fill.png> <./images/compresse
-d-sensing-images.png> <./images/unet-images.png> <./images/varnet-images.png>]
+ [3 <./images/test-images.png>]
+[4 <./images/zero-fill.png> <./images/compressed-sensing-images.png> <./images/
+unet-images.png> <./images/varnet-images.png>]
 <./images/humus-comparison.png, id=38, 433.62pt x 610.53094pt>
 File: ./images/humus-comparison.png Graphic file (type png)
 <use ./images/humus-comparison.png>
@@ -385,28 +389,27 @@ File: ./images/humus-perf.png Graphic file (type png)
 Package pdftex.def Info: ./images/humus-perf.png  used on input line 130.
 (pdftex.def)             Requested size: 400.0pt x 155.19746pt.
  [5 <./images/humus-comparison.png (PNG copy)>] [6 <./images/humus-perf.png (PN
-G copy)>]
-(./summary-latex.bbl) [7] (./summary-latex.aux) ) 
+G copy)>] (./summary-latex.bbl)
+[7] (./summary-latex.aux) ) 
 Here is how much of TeX's memory you used:
- 5917 strings out of 478126
- 97646 string characters out of 5842786
- 1856793 words of memory out of 6000000
- 25893 multiletter control sequences out of 15000+600000
+ 5950 strings out of 477985
+ 98163 string characters out of 5839381
+ 1857388 words of memory out of 6000000
+ 26070 multiletter control sequences out of 15000+600000
  520485 words of font info for 64 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 67i,8n,77p,1019b,374s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist
-/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on summary-latex.pdf (7 pages, 1464260 bytes).
+ 67i,8n,77p,1019b,378s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/cm-super/sfrm1000.pfb>
+Output written on summary-latex.pdf (7 pages, 1464236 bytes).
 PDF statistics:
  94 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream
