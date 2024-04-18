@@ -360,8 +360,10 @@ class UnetDataTransform:
 
         # absolute value
         image = np.abs(image)
-        print(image.type())
+        print(image.dtype)
         print(image.shape)
+
+        image = to_tensor(image)
 
         # # apply Root-Sum-of-Squares if multicoil data
         # if self.which_challenge == "multicoil":
