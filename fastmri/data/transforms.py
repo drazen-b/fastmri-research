@@ -370,7 +370,7 @@ class UnetDataTransform:
         #     image = fastmri.rss(image)
 
         # normalize input
-        image = fastmri.rss(image)
+        # image = fastmri.rss(image)
         image, mean, std = normalize_instance(image, eps=1e-11)
         image = image.clamp(-6, 6)
 
@@ -382,6 +382,9 @@ class UnetDataTransform:
             target_torch = target_torch.clamp(-6, 6)
         else:
             target_torch = torch.Tensor([0])
+
+        print(image.dtype)
+        print(image.shape)
 
         return UnetSample(
             image=image,
