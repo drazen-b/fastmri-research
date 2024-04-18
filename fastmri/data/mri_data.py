@@ -372,6 +372,7 @@ class SliceDataset(torch.utils.data.Dataset):
             enc_limits_center = 127
             enc_limits_max = 255
             enc_size = [256, 256, 1]
+            recon_size = [245, 245, 1]
             padding_left = enc_size[1] // 2 - enc_limits_center
             padding_right = padding_left + enc_limits_max
 
