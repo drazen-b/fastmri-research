@@ -364,14 +364,14 @@ class UnetDataTransform:
         print(image.dtype)
         print(image.shape)
 
-        image = to_tensor(image)
+        # image = to_tensor(image)
 
         # # apply Root-Sum-of-Squares if multicoil data
         # if self.which_challenge == "multicoil":
         #     image = fastmri.rss(image)
 
         # normalize input
-        # image = fastmri.rss(image)
+        image = fastmri.rss(image)
         image, mean, std = normalize_instance(image, eps=1e-11)
         image = image.clamp(-6, 6)
 
