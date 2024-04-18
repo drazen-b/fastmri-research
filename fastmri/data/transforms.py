@@ -344,7 +344,7 @@ class UnetDataTransform:
             masked_kspace = kspace_torch
 
         # inverse Fourier transform to get zero filled solution
-        image = fastmri.ifft2c(masked_kspace)
+        image = np.fft.ifft2(masked_kspace)
 
         # crop input to correct size
         if target is not None:
@@ -359,11 +359,11 @@ class UnetDataTransform:
         image = complex_center_crop(image, crop_size)
 
         # absolute value
-        image = fastmri.complex_abs(image)
+        image = np.abs(image)
 
-        # apply Root-Sum-of-Squares if multicoil data
-        if self.which_challenge == "multicoil":
-            image = fastmri.rss(image)
+        # # apply Root-Sum-of-Squares if multicoil data
+        # if self.which_challenge == "multicoil":
+        #     image = fastmri.rss(image)
 
         # normalize input
         image, mean, std = normalize_instance(image, eps=1e-11)
