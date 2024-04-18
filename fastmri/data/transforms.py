@@ -344,7 +344,8 @@ class UnetDataTransform:
             masked_kspace = kspace_torch
 
         # inverse Fourier transform to get zero filled solution
-        image = np.fft.ifft2(masked_kspace)
+        # image = np.fft.ifft2(masked_kspace)
+        image = fastmri.ifft2c(masked_kspace)
 
         # crop input to correct size
         if target is not None:
