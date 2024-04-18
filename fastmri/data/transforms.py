@@ -367,7 +367,7 @@ class UnetDataTransform:
 
         # normalize input
         image, mean, std = normalize_instance(image, eps=1e-11)
-        image = image.clip(-6, 6)
+        image = image.clamp(-6, 6)
 
         # normalize target
         if target is not None:
