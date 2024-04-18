@@ -366,8 +366,11 @@ class SliceDataset(torch.utils.data.Dataset):
             # padding_right = padding_left + enc_limits_max
 
             num_slices = hf["kspace"].shape[0]
-            enc_limits_center = (hf["kspace"].shape[4] - 1)/ 2 ##
-            enc_limits_max = (hf["kspace"].shape[4] - 1)
+            # enc_limits_center = (hf["kspace"].shape[4] - 1)/ 2 ##
+            # enc_limits_max = (hf["kspace"].shape[4] - 1)
+
+            enc_limits_center = 127
+            enc_limits_max = 255
 
             padding_left = enc_size[1] // 2 - enc_limits_center
             padding_right = padding_left + enc_limits_max
