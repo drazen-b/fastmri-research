@@ -330,7 +330,7 @@ class UnetDataTransform:
             target, the mean used for normalization, the standard deviations
             used for normalization, the filename, and the slice number.
         """
-        kspace_torch = to_tensor(kspace)
+        kspace_torch = to_tensor(kspace).to(float32)
 
         # check for max value
         max_value = attrs["max"] if "max" in attrs.keys() else 0.0
@@ -339,12 +339,12 @@ class UnetDataTransform:
         if self.mask_func:
             seed = None if not self.use_seed else tuple(map(ord, fname))
             # we only need first element, which is k-space after masking
-            masked_kspace = apply_mask(kspace_torch, self.mask_func, seed=seed)[0]
+            masked_kspace = apply_mask(kspace_torch, self.mask_func, seed=seed)[0].to(float32)
         else:
             masked_kspace = kspace_torch
 
         # inverse Fourier transform to get zero filled solution
-        image = fastmri.ifft2c(masked_kspace)
+        image = fastmri.ifft2c(masked_kspace).to(float32)
 
         # crop input to correct size
         if target is not None:
@@ -356,27 +356,27 @@ class UnetDataTransform:
         if image.shape[-2] < crop_size[1]:
             crop_size = (image.shape[-2], image.shape[-2])
 
-        image = complex_center_crop(image, crop_size)
+        image = complex_center_crop(image, crop_size).to(float32)
 
         # absolute value
-        image = fastmri.complex_abs(image)
+        image = fastmri.complex_abs(image).to(float32)
 
         # apply Root-Sum-of-Squares if multicoil data
         if self.which_challenge == "multicoil":
-            image = fastmri.rss(image)
+            image = fastmri.rss(image).to(float32)
 
         # normalize input
         image, mean, std = normalize_instance(image, eps=1e-11)
-        image = image.clamp(-6, 6)
+        image = image.clamp(-6, 6).to(float32)
 
         # normalize target
         if target is not None:
-            target_torch = to_tensor(target)
-            target_torch = center_crop(target_torch, crop_size)
+            target_torch = to_tensor(target).to(float32)
+            target_torch = center_crop(target_torch, crop_size).to(float32)
             target_torch = normalize(target_torch, mean, std, eps=1e-11)
-            target_torch = target_torch.clamp(-6, 6)
+            target_torch = target_torch.clamp(-6, 6).to(float32)
         else:
-            target_torch = torch.Tensor([0])
+            target_torch = torch.Tensor([0]).to(float32)
 
         return UnetSample(
             image=image,
