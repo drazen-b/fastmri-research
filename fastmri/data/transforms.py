@@ -389,6 +389,9 @@ class UnetDataTransform:
             target_torch = torch.Tensor([0])
             target_torch = target_torch.float()
 
+        print(target_torch)
+        print(target_torch.shape)
+
         return UnetSample(
             image=image,
             target=target_torch,
