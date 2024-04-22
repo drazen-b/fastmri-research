@@ -299,7 +299,6 @@ class SliceDataset(torch.utils.data.Dataset):
             files = list(Path(root).iterdir())
             for fname in sorted(files):
                 metadata, num_slices = self._retrieve_metadata(fname)
-                # num_slices = 16
 
                 new_raw_samples = []
                 for slice_ind in range(num_slices):
@@ -343,38 +342,29 @@ class SliceDataset(torch.utils.data.Dataset):
 
     def _retrieve_metadata(self, fname):
         with h5py.File(fname, "r") as hf:
-            # et_root = etree.fromstring(hf["ismrmrd_header"][()])
+            et_root = etree.fromstring(hf["ismrmrd_header"][()])
 
-            # enc = ["encoding", "encodedSpace", "matrixSize"]
-            # enc_size = (
-            #     int(et_query(et_root, enc + ["x"])),
-            #     int(et_query(et_root, enc + ["y"])),
-            #     int(et_query(et_root, enc + ["z"])),
-            # )
-            # rec = ["encoding", "reconSpace", "matrixSize"]
-            # recon_size = (
-            #     int(et_query(et_root, rec + ["x"])),
-            #     int(et_query(et_root, rec + ["y"])),
-            #     int(et_query(et_root, rec + ["z"])),
-            # )
+            enc = ["encoding", "encodedSpace", "matrixSize"]
+            enc_size = (
+                int(et_query(et_root, enc + ["x"])),
+                int(et_query(et_root, enc + ["y"])),
+                int(et_query(et_root, enc + ["z"])),
+            )
+            rec = ["encoding", "reconSpace", "matrixSize"]
+            recon_size = (
+                int(et_query(et_root, rec + ["x"])),
+                int(et_query(et_root, rec + ["y"])),
+                int(et_query(et_root, rec + ["z"])),
+            )
 
-            # lims = ["encoding", "encodingLimits", "kspace_encoding_step_1"]
-            # enc_limits_center = int(et_query(et_root, lims + ["center"]))
-            # enc_limits_max = int(et_query(et_root, lims + ["maximum"])) + 1
+            lims = ["encoding", "encodingLimits", "kspace_encoding_step_1"]
+            enc_limits_center = int(et_query(et_root, lims + ["center"]))
+            enc_limits_max = int(et_query(et_root, lims + ["maximum"])) + 1
 
-            # padding_left = enc_size[1] // 2 - enc_limits_center
-            # padding_right = padding_left + enc_limits_max
-
-            num_slices = hf["kspace"].shape[0]
-            # enc_limits_center = (hf["kspace"].shape[4] - 1)/ 2 ##
-            # enc_limits_max = (hf["kspace"].shape[4] - 1)
-
-            enc_limits_center = 127
-            enc_limits_max = 255
-            enc_size = [256, 256, 1]
-            recon_size = [245, 245, 1]
             padding_left = enc_size[1] // 2 - enc_limits_center
             padding_right = padding_left + enc_limits_max
+
+            num_slices = hf["kspace"].shape[0]
 
             metadata = {
                 "padding_left": padding_left,
