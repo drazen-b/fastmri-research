@@ -386,7 +386,7 @@ class UnetDataTransform:
             target_torch = target_torch.clamp(-6, 6)
             target_torch = target_torch.float()
         else:
-            target_torch = torch.Tensor([0])
+            # target_torch = torch.Tensor([0])
             target_torch = target_torch.float()
 
         print(target_torch)
